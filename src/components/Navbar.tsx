@@ -12,7 +12,6 @@ import {
 import { Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-// Define the navigation items
 const navItems = [
   { label: "Home", sectionId: "hero" },
   { label: "About", sectionId: "about" },
@@ -25,7 +24,6 @@ const navItems = [
 export function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
 
-  // Handle smooth scrolling
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -33,7 +31,7 @@ export function Navbar() {
     }
   };
 
-  // Update active section based on scroll position
+  // Updates active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => ({
