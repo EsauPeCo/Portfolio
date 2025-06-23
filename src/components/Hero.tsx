@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Download, Github, Linkedin } from "lucide-react";
@@ -7,10 +8,25 @@ import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, Parallax } from "@/components/ui/scroll-animations";
 
 export function Hero() {
+  const highlightPaw = () => {
+    window.dispatchEvent(new Event('highlightPaw'));
+  };
+
+  // Ensure page starts at top on mobile devices
+  useEffect(() => {
+    // Scroll to top on component mount
+    window.scrollTo(0, 0);
+    
+    // Prevent scroll restoration on page reload
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-4 py-20"
+      className="min-h-screen flex items-center justify-center px-4 py-20 pt-20 md:pt-24"
     >
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -24,12 +40,15 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
               >
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <motion.span 
                   className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent"
                   initial={{ backgroundSize: "0% 100%" }}
                   animate={{ backgroundSize: "100% 100%" }}
                   transition={{ delay: 0.5, duration: 1 }}
+                  onClick={highlightPaw}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   Esaú Pérez
                 </motion.span>
@@ -131,6 +150,8 @@ export function Hero() {
                 <motion.div 
                   className="relative w-full h-full overflow-hidden"
                   whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={highlightPaw}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                   <Image
