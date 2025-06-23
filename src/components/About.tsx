@@ -24,8 +24,8 @@ export function About() {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              I'm an active software development student with hands-on experience
-              building web applications. I'm a tryhard at whatever I do, always
+              I&apos;m an active software development student with hands-on experience
+              building web applications. I&apos;m a tryhard at whatever I do, always
               trying to refine my current skills and acquire new ones
             </motion.p>
           </StaggerItem>
@@ -36,7 +36,7 @@ export function About() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               My path here started with mechatronics engineering, took a five-year
-              detour into professional Dota 2 competition, and now I'm channeling
+              detour into professional Dota 2 competition, and now I&apos;m channeling
               that strategic thinking and pressure-handling experience into code.
               Each phase taught me something different about problem-solving,
               teamwork, and pushing through challenges.
@@ -48,7 +48,7 @@ export function About() {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              But instead of telling you about my unconventional path, let me show
+              But instead of telling you about my unconventional path, let&apos;s show
               you how it all connects.
             </motion.p>
           </StaggerItem>
